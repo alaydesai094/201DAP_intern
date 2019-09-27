@@ -9,12 +9,6 @@
 import UIKit
 
 open class ToastLabel: UILabel {
-
-
-//    import Foundation
-//    import UIKit
-//
-//    open class ToastView: UILabel {
     
         var overlayView = UIView()
         var backView = UIView()

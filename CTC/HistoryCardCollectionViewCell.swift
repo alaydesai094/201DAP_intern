@@ -28,9 +28,6 @@ class HistoryCardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var restoreButton: UIButton!
     override func awakeFromNib() {
         cardBackgroundView.setPopupView()
-//        self.backgroundColor = .white
-//        cardBackgroundView.layer.cornerRadius = 10
-        
         PracticeNameLabel.setPopUpTitle()
         percentageProgressView.layer.cornerRadius = percentageProgressView.frame.height / 2
     }

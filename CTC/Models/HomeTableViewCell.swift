@@ -83,12 +83,12 @@ class HomeTableViewCell: UITableViewCell {
          resultFlag = dbHelper.addPracticeData(practised: isOn, practice: practice, date: selectedDate)
         if resultFlag == 0{
             
-            showToast(message: "Data Saved", duration: 3,view: view)
-            //print("Data Saved")
+           // showToast(message: "Data Saved", duration: 3,view: view)
+            print("Data Saved")
             
         }else if resultFlag == 1{
             //print("error in Cell Data Saving")
-            showAlert(title: "Error", message: "Data saving error please try againm", buttonTitle: "Try Again")
+            //showAlert(title: "Error", message: "Data saving error please try againm", buttonTitle: "Try Again")
             
         }
 
@@ -99,6 +99,7 @@ class HomeTableViewCell: UITableViewCell {
         isOn = flag
         if(isOn){
             starButton.setImage(UIImage(named: "Star-Selected"), for: .normal)
+       
          
         }else{
             
@@ -106,6 +107,9 @@ class HomeTableViewCell: UITableViewCell {
          
         }
     }
+    
+   
+    
     
     
 }

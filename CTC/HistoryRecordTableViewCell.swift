@@ -72,25 +72,6 @@ class HistoryRecordTableViewCell: UITableViewCell,UICollectionViewDelegate, UICo
     }
     
     
-//    @IBAction func restoreButton(_ sender: Any) {
-//        let index = CollectionView.indexPath(for: historyCollectionViewCell)
-//
-//        let history = historyData![index!.item]
-//        print("History Data to delete \(history)")
-//
-//
-//
-//        let alert = UIAlertController(title: "Warning", message: "Are you sure you want to restore practie?", preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: "Restore", style: .destructive, handler: { (action:UIAlertAction) -> Void in
-//            // self.retrieveData()
-//
-//
-//        }))
-//
-//        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//        present(alert, animated: true, completion: nil)
-//
-//    }
     @IBAction func restoreButton(_ sender: Any) {
         let section = (sender as AnyObject).tag / 100
         let item = (sender as AnyObject).tag % 100
@@ -125,15 +106,7 @@ class HistoryRecordTableViewCell: UITableViewCell,UICollectionViewDelegate, UICo
         catch{
             print("Failed")
         }
-//        let alert = UIAlertController(title: "Warning", message: "Are you sure you want to restore practie?", preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: "Restore", style: .destructive, handler: { (action:UIAlertAction) -> Void in
-//            // self.retrieveData()
-//
-//
-//        }))
-//
-//        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//        present(alert, animated: true, completion: nil)
+
     }
     
     func delPractice(prac: PracticeHistory){
@@ -182,11 +155,9 @@ class HistoryRecordTableViewCell: UITableViewCell,UICollectionViewDelegate, UICo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCollectionCell", for: indexPath) as! HistoryCardCollectionViewCell
         cell.backgroundColor = .gray
-//        cell.restoreButton.tag = (indexPath.section * 100) + indexPath.item
-//        cell.restoreButton.addTarget(self, action: #selector(restoreButton(_:)), for: .touchUpInside)
-//        print(no[indexPath.item])
+
         print("index path in function : \(indexPath)")
-        //print("Data : \(String(describing: historyData?.count))")
+       
         let history = historyData![indexPath.item]
         
         
@@ -194,8 +165,7 @@ class HistoryRecordTableViewCell: UITableViewCell,UICollectionViewDelegate, UICo
         statusString = statusString + "\(((history.date!) as Date).dateFormateToString()!)"
         let trackingDays = history.td
         let daySinceStarted = history.dss
-//        let vrf = Float(trackingDays) / Float(daySinceStarted == 0 ? 1 : daySinceStarted)
-//        print(vrf)
+
         let percentage = (Float(trackingDays) / Float(daySinceStarted == 0 ? 1 : daySinceStarted)) * 100
         
       
@@ -218,36 +188,6 @@ class HistoryRecordTableViewCell: UITableViewCell,UICollectionViewDelegate, UICo
         
         CardPageControl.currentPage = Int(x / HistoryCollectionView.frame.width)
         
-        
-        //MARK: for bigger current page dot
-        
-        
-//        // on each dot, call the transform of scale 1 to restore the scale of previously selected dot
-//        
-//        CardPageControl.subviews.forEach {
-//            $0.transform = CGAffineTransform(scaleX: 1, y: 1)
-//        }
-//        
-//        // transform the scale of the current subview dot, adjust the scale as required, but bigger the scale value, the downward the dots goes from its centre.
-//        // You can adjust the centre anchor of the selected dot to keep it in place approximately.
-//        
-//        let centreBeforeScaling = self.CardPageControl.subviews[self.CardPageControl.currentPage].center
-//        
-//        self.CardPageControl.subviews[self.CardPageControl.currentPage].transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
-//        
-//        
-//        // Reposition using autolayout
-//        
-//        self.CardPageControl.subviews[self.CardPageControl.currentPage].translatesAutoresizingMaskIntoConstraints = false
-//        
-//        self.CardPageControl.subviews[self.CardPageControl.currentPage].centerYAnchor.constraint(equalTo: self.CardPageControl.subviews[0].centerYAnchor , constant: 0)
-//        
-//        self.CardPageControl.subviews[self.CardPageControl.currentPage].centerXAnchor.constraint(equalTo: self.CardPageControl.subviews[0].centerXAnchor , constant: 0)
-//        
-//        
-////            self.CardPageControl.subviews[self.CardPageControl.currentPage].layer.anchorPoint = centreBeforeScaling
-//        
-//        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -52,11 +52,9 @@ class SetResolutionButton: UIButton {
         isOn = bool
         
         let color = bool ? UIColor.green : UIColor.red
-     //   let title = bool ? "Yes" : "No"
         let titleColor = bool ? UIColor.black : UIColor.black
         let imageIcon = bool ? UIImage(named: "Yes") : UIImage(named: "No")
         
-//        setTitle(title, for: .normal)
         setImage(imageIcon, for: .normal)
         setTitleColor(titleColor, for: .normal)
         backgroundColor = color

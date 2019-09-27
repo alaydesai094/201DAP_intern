@@ -23,12 +23,6 @@ class MainNavigationController: UINavigationController {
         
         if (userObject != nil){
             
-//            for user in dbHelper.getUser(){
-//
-//                userObject = user
-//
-//            }
-            
             perform( #selector(MainNavigationController.showHome), with: nil, afterDelay: 0.01 )
             
         }else{

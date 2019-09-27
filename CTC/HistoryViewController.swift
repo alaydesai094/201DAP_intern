@@ -31,8 +31,6 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         dbHelper = DatabaseHelper()
         
-//        let resultFlag = dbHelper.addPracticeHistory(practiceName: "Prac - 2", comDelFlag: true, date: Date().dateFormate()!, dss: 4, td: 3)
-        
         let history = dbHelper.getPracticeHistory()
         
         //print(history)
@@ -63,44 +61,6 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
      
     }
     
-    
-    
-   
-//    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool)
-//    {
-//        if (!completed)
-//        {
-//            return
-//        }
-//        self.pageView.currentPageIndex = pageViewController.viewControllers!.first!.view.tag //Page Index
-//    }
-    
-    
-    
-//
-//    @IBAction func restorePractice(_ sender: Any) {
-//    
-////        let index = CollectionView.indexPath(for: historyCollectionViewCell)
-////        let history = historyData![index!.item]
-//        
-////        print("History to delete \(history)")
-//        
-//        let index = CollectionView.indexPath(for: historyCollectionViewCell)
-//        
-//        let history = historyData![index!.item]
-//        print("History Data to delete \(history)")
-//        
-//        let alert = UIAlertController(title: "Warning", message: "Are you sure you want to restore practie?", preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: "Restore", style: .destructive, handler: { (action:UIAlertAction) -> Void in
-//           // self.retrieveData()
-//          
-//          
-//        }))
-//        
-//        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//        present(alert, animated: true, completion: nil)
-//        
-//    }
     
    
     func retrieveData(){
