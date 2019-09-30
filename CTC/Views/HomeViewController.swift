@@ -529,7 +529,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBAction func iconImageButtonTapped(_ sender: Any) {
         
-        let actionSheet = UIAlertController(title: "Resolution Icons", message: "Choose an Icon to Categories Your Resolution", preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(title: "Practice Icons", message: "Choose an Icon to Categories Your Practice", preferredStyle: .actionSheet)
         var no: Int = 0
         for icon in moreOptionIconList{
             
