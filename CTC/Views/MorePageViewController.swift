@@ -10,8 +10,8 @@ import UIKit
 
 class MorePageViewController: UIViewController {
     
-    let moreOptionList = ["Practice History", "FAQ", "About Us", "How To Use The App","Join Our Facebook Community","201 Day Achievement Principle Book and Journal", "Logout", ""]
-    let moreOptionIconList = ["History", "FAQ", "Aboutus", "User-Manual", "facebook", "Book-Journal", "Logout", ""]
+    let moreOptionList = ["Deleted Practice History", "FAQ", "About Us", "How To Use The App","Join Our Facebook Community","201 Day Achievement Principle Book and Journal", "Profile Setting","Logout","",]
+    let moreOptionIconList = ["History", "FAQ", "Aboutus", "User-Manual", "facebook", "Book-Journal", "Profile","Logout",""]
     
     var dbHelper: DatabaseHelper!
     var userObject: User?
@@ -122,9 +122,14 @@ extension MorePageViewController : UITableViewDelegate, UITableViewDataSource{
         print("section : \(indexPath.section)")
         print(moreOptionIconList.count-1)
         print(moreOptionList[indexPath.section])
+        
         switch moreOptionList[indexPath.section] {
-        case "Practice History":
+            
+        case "Deleted Practice History":
             performSegue(withIdentifier: "moreToHistorySegue", sender: self)
+            break
+        case "Profile Setting":
+        performSegue(withIdentifier: "ProfileSegue", sender: self)
             break
         case "FAQ":
             performSegue(withIdentifier: "FAQSegue", sender: self)

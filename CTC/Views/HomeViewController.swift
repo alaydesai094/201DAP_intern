@@ -22,7 +22,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var window: UIWindow!
     
     var userObject: User!
-    let moreOptionIconList = ["book", "dairy", "money management","excercise","flour","communication","language","meditation","music","salad","sleep","relaxation","self reflection","walking","abstinence","yoga","tidy up","vegetable","writing","hobby","board game","sport","electronics","worship","entertainment","coffee-tea"]
+    let moreOptionIconList = ["book", "dairy", "money management","excercise","flour","communication","language","meditation","music","salad","sleep","relaxation","self reflection","walking","abstinence","yoga","tidy up","vegetable","writing","hobby","board game","sport","electronics","worship","entertainment","coffee-tea","Other"]
     var imageName: String = ""
     
     var lastCellNumber : Int!

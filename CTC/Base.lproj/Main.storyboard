@@ -630,6 +630,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cJL-DR-ITf"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ejf-dW-C5o"/>
                     <connections>
                         <outlet property="dayOfYearLabel" destination="RaR-7O-z8O" id="mEE-Pp-yIq"/>
                         <outlet property="noteBackgroundView" destination="BKH-eE-RQU" id="9Wr-3y-zNr"/>
@@ -671,7 +672,7 @@
                 <viewController id="aMn-4a-25D" customClass="CircularViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XH0-wA-N5R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4630" y="-2517"/>
+            <point key="canvasLocation" x="3091" y="-2517"/>
         </scene>
         <!--Login Opiton View Controller-->
         <scene sceneID="Dzi-wX-yFy">
@@ -1195,6 +1196,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DRI-Sc-r3i"/>
                     </view>
+                    <navigationItem key="navigationItem" id="rE8-uq-RbH"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="onboardingCollectionView" destination="edV-bk-heZ" id="9Xb-A0-JrP"/>
@@ -1203,7 +1205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hDN-CJ-Z0e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-88.405797101449281" y="1000.4464285714286"/>
+            <point key="canvasLocation" x="-3701" y="2026"/>
         </scene>
         <!--More-->
         <scene sceneID="gKM-n3-qbV">
@@ -1276,11 +1278,12 @@
                         <segue destination="Ssh-5X-lf5" kind="show" identifier="aboutUsSegue" id="hLQ-an-F8Q"/>
                         <segue destination="JPR-DW-rmG" kind="show" identifier="welcomePageSegue" id="rX0-CJ-xaz"/>
                         <segue destination="cMu-NE-CGp" kind="show" identifier="FAQSegue" id="vsU-wu-k5T"/>
+                        <segue destination="J2Q-gj-2PA" kind="show" identifier="ProfileSegue" id="doC-Zk-Rlf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SUZ-gL-OcL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2097" y="1211"/>
+            <point key="canvasLocation" x="-2148" y="323"/>
         </scene>
         <!--Your Track Records-->
         <scene sceneID="RaD-AD-3B9">
@@ -1337,7 +1340,6 @@
                     <connections>
                         <segue destination="nAn-k4-3br" kind="relationship" relationship="viewControllers" id="36C-Xm-TlZ"/>
                         <segue destination="drU-kc-gcX" kind="relationship" relationship="viewControllers" id="ymz-rw-p1G"/>
-                        <segue destination="BLn-FI-HR0" kind="relationship" relationship="viewControllers" id="4vH-af-5ET"/>
                         <segue destination="BwZ-c6-Wcl" kind="relationship" relationship="viewControllers" id="1CY-OV-3Ea"/>
                     </connections>
                 </tabBarController>
@@ -1362,28 +1364,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l2H-fa-Sia" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3897" y="-457"/>
+            <point key="canvasLocation" x="-3801" y="-457"/>
         </scene>
-        <!--Profile-->
-        <scene sceneID="qtD-ZJ-J0a">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BLn-FI-HR0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="Profile" selectedImage="Profile-Selected" id="6er-aH-zTQ"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kXc-74-ILf" customClass="NavigationBar" customModule="CTC" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="J2Q-gj-2PA" kind="relationship" relationship="rootViewController" id="zud-Jj-0CR"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vOI-Bn-yfa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3897" y="400"/>
-        </scene>
-        <!--Profile-->
+        <!--Profile View Controller-->
         <scene sceneID="hvf-Ww-KiA">
             <objects>
                 <viewController id="J2Q-gj-2PA" customClass="ProfileViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
@@ -1470,7 +1453,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kLD-LJ-NgT"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile" id="OKd-RV-jGU"/>
+                    <navigationItem key="navigationItem" id="q39-9O-V2h"/>
                     <connections>
                         <outlet property="cancelButton" destination="Ce2-Zr-J8M" id="qjn-d7-0dV"/>
                         <outlet property="dobTextField" destination="ZKa-eK-AjW" id="hIX-4R-YHP"/>
@@ -1631,7 +1614,7 @@
                     <viewLayoutGuide key="safeArea" id="QFp-hC-8rs"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="-2097" y="400"/>
+            <point key="canvasLocation" x="-88" y="2005"/>
         </scene>
         <!--History View Controller-->
         <scene sceneID="SUc-wK-Hzs">
@@ -1868,13 +1851,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qd7-Wm-cWH"/>
                     </view>
+                    <navigationItem key="navigationItem" id="vCk-H9-zVK"/>
                     <connections>
                         <outlet property="historyTableView" destination="xgY-zJ-na7" id="Tl9-Y2-v9b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gXh-Fy-ok8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-88" y="251"/>
+            <point key="canvasLocation" x="-1243" y="2005"/>
         </scene>
         <!--More-->
         <scene sceneID="Kzh-96-Xzd">
@@ -1893,7 +1877,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H5V-K0-izh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3897" y="1391"/>
+            <point key="canvasLocation" x="-3801" y="323"/>
         </scene>
         <!--Home-->
         <scene sceneID="9ql-7l-V8t">
@@ -1967,7 +1951,7 @@
                                     <constraint firstAttribute="height" constant="274" id="5qA-Ks-hAh"/>
                                     <constraint firstAttribute="width" constant="193" id="fzE-qy-QgB"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Kim.png" translatesAutoresizingMaskIntoConstraints="NO" id="iKf-4W-bAh">
@@ -2010,6 +1994,7 @@
                         <viewLayoutGuide key="safeArea" id="gZn-pI-l8R"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="ffK-kE-oFU"/>
+                    <navigationItem key="navigationItem" id="lBG-gu-fy6"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="btn_Kim" destination="BO1-1q-H4E" id="smC-LD-X7P"/>
@@ -2022,7 +2007,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OPI-8K-jMf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-88" y="1780"/>
+            <point key="canvasLocation" x="-4703" y="2026"/>
         </scene>
         <!--FAQ-->
         <scene sceneID="Ctk-7d-CxF">
@@ -2034,10 +2019,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="mj1-e7-gds"/>
                     </view>
+                    <navigationItem key="navigationItem" id="4jD-3d-kEC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Acn-Z4-LFk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="959" y="1460"/>
+            <point key="canvasLocation" x="-2472" y="2005"/>
         </scene>
     </scenes>
     <resources>
@@ -2051,8 +2037,6 @@
         <image name="More" width="29" height="29"/>
         <image name="More-Selected" width="29" height="29"/>
         <image name="Plus" width="29" height="29"/>
-        <image name="Profile" width="29" height="29"/>
-        <image name="Profile-Selected" width="29" height="29"/>
         <image name="Record-Selected" width="29" height="29"/>
         <image name="Records" width="29" height="29"/>
         <image name="Star" width="29" height="29"/>
@@ -2060,7 +2044,7 @@
         <image name="three-star-picture-id638324800.png" width="59040" height="28512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hM8-2d-lAL"/>
-        <segue reference="eBp-b5-Ha2"/>
+        <segue reference="Aj6-YB-cAf"/>
+        <segue reference="F7x-WB-H9n"/>
     </inferredMetricsTieBreakers>
 </document>

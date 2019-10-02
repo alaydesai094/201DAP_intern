@@ -40,7 +40,6 @@ class MainNavigationController: UINavigationController {
             
         })
         
-        
     }
     @objc func showLogin() {
         let login = LoginOpitonViewController()

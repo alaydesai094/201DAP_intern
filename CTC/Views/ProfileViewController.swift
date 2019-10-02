@@ -27,13 +27,6 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
             "Email" : "niravbavishi007@gmail.com",
             "Password" : "xxxxxxxxxx"
         ],
-//        [
-//        
-//            "Card No" : "xxxx-xxxx-xxxx-xxxx",
-//            "Card Holder Name" : "Nirav Bavishi",
-//            "Card CVV" : "xxx"
-//            
-//        ]
         
          
         
@@ -108,18 +101,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         
         navigationItem.rightBarButtonItem = barButton
         
-        //// bar buttton
-
-//        profileDataTableView.allowsSelection = false
         
-        // Do any additional setup after loading the view.
-//        for (key,value) in date[0]{
-//
-//            print("\(key):\(value)")
-//
-//        }
-        
-//        print(userObject)
         
         userData = (["Name": userObject.name, "Email": userObject.email, "Password": userObject.password,"DOB": userObject.dob ?? ""] as! [String : String])
         
@@ -151,27 +133,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
             textField.placeholder = "Enter Your Current Password"
         }
         present(alert, animated: true, completion: nil)
-       
-//        let savingResult = dbHelper.updateUser(email: <#T##String#>, name: <#T##String#>, dob: <#T##String#>, password: <#T##String#>)(note: noteData!, practised: ispracticed, practice: currentPractice)
-//
-//        if(savingResult == 0){
-//
-//            showToast(message: "Data Saved. . .", duration: 3)
-//            delegate?.passUserObject(user: userObject)
-//            dismiss(animated: true, completion: nil)
-//            //            self.navigationController?.popViewController(animated: true)
-//            self.navigationController?.popToViewController(self, animated: true)
-//            //            performSegue(withIdentifier: "addDataToHomeSegue", sender: self)
-//
-//        }
-//        else if(savingResult == 1){
-//
-//            showAlert(title: "Error", message: "Datasaving Error Please try again. . .", buttonTitle: "Try Again")
-//
-//        }
-//
-//
-        
+               
         
     }
     
@@ -284,10 +246,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
                 }
                 
             }else{
-//
-//        let key = keys[indexPath.section][indexPath.row]
-//        cell?.titleLabel.text = key
-//        cell?.contentTextLabel.text = date[indexPath.section][key]
+                
             }
             
             
