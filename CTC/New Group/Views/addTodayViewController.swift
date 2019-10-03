@@ -24,6 +24,7 @@ class addTodayViewController: UIViewController{
     var practicesData: [PracticeData]!
     var delegate: ReceiveData?
     var isOn : Bool!
+    var ispracticed : Bool!
     
     ////variables
  
@@ -133,9 +134,12 @@ class addTodayViewController: UIViewController{
         
         let barButton = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(self.saveButtonTapped))
         
+        
         navigationItem.rightBarButtonItem = barButton
     
-        isOn = starButton.isSelected
+        starButton.isSelected = true
+        isOn =  starButton.isSelected
+       
        // print("Button status \(isOn)")
         // listener for keyboard
         
@@ -187,7 +191,7 @@ class addTodayViewController: UIViewController{
                     let temp = data.note
                     noteTextView.text = temp == "" || temp == nil ? "Write Your Notes Here. . . " : temp
                     self.activeButton(flag: data.practised)
-//                  isPracticedSwitch.isOn = data.practised
+                    //isPracticedSwitch.isOn = data.practised
                     
                 }
                 
@@ -209,15 +213,7 @@ class addTodayViewController: UIViewController{
    
     
     @objc func popUpDateSelected() {
-        //
-        //        let selectedDate = datePicker.date.dateFormate()!
-        //
-        //        let selectedData : [PracticeData] = dbHelper.getPracticeDataByDate(date: selectedDate)!
-        //        print(selectedData)
-        //
-        //        practices = self.getPractices()
-        //        practicesData = selectedData
-        //        self.homeTableView.reloadData()
+
         
         self.view.endEditing(true)
         
@@ -226,6 +222,8 @@ class addTodayViewController: UIViewController{
     
     //MARK: Save button tapped from bar
     @objc func saveButtonTapped() {
+        
+        self.showToast(message : "Data saved Succefully", duration: 3)
         
         let ispracticed = isOn
        // print(ispracticed)
@@ -239,15 +237,9 @@ class addTodayViewController: UIViewController{
         
         if(savingResult == 0){
             
-            showToast(message: "Data Saved. . .", duration: 3)
+            self.showToast(message: "Data Saved Succefully", duration: 3)
             delegate?.passUserObject(user: userObject)
-//            dismiss(animated: true, completion: nil)
-//            self.navigationController?.popViewController(animated: true)
-//            self.navigationController?.popToRootViewController(animated: true)
-//            let vc = storyboard?.instantiateViewController(withIdentifier: "Home") as! HomeViewController
-//            self.navigationController?.popToViewController(vc, animated: true)
-            
-//            performSegue(withIdentifier: "addDataToHomeSegue", sender: self)
+
             for controller in self.navigationController!.viewControllers as Array {
                 if controller.isKind(of: HomeViewController.self) {
                     self.navigationController!.popToViewController(controller, animated: true)
@@ -280,8 +272,7 @@ class addTodayViewController: UIViewController{
        
     }
     @objc func PopUpDatePickerValueChanged(datePicker: UIDatePicker){
-        
-//        practiceStartedDate.text = popUpDatePicker.date.dateFormatemmmdd()!
+
         
     }
     
@@ -311,14 +302,9 @@ class addTodayViewController: UIViewController{
     }
     
     @objc func dismissPickerView() {
-        
-//        trackingDayLabel.text = "\(practicesArray[myIndex].practiseddays)"
-//        setPercentageAnimation(percentageValue: Int(practicesArray[myIndex].percentage))
-//        currentPractice = practicesArray[myIndex]
+
         
         self.setData()
-//        progressViewSet(valuePercentage: resolutionPercentage[myIndex])
-        
         
         view.endEditing(true)
     }
@@ -343,11 +329,6 @@ class addTodayViewController: UIViewController{
         
     }
     
-//    
-//    @IBAction func clock(_ sender: Any) {
-//        var clock: NSURL = NSURL(string: "clock-alarm:")!
-//        UIApplication.shared.openURL(clock as URL)
-//    }
     
     
    
@@ -362,11 +343,9 @@ class addTodayViewController: UIViewController{
     func customeButton(button : UIButton){
         
         button.layer.borderWidth = 1
-//        button.layer.borderColor = UIColor.black.cgColor
         button.layer.cornerRadius = 10
         button.setImage(UIImage(named: "DropDown"), for: .normal)
         button.imageEdgeInsets = UIEdgeInsets(top: 6, left: 100, bottom: 6, right: 14)
-//        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: -36, bottom: 0, right: 34)
         
    
     }
@@ -456,22 +435,15 @@ class addTodayViewController: UIViewController{
     
     @IBAction func starButtonTapped(_ sender: Any) {
         
-        isOn = true
-        if(isOn == true){
-            starButton.setImage(UIImage(named: "Star-Selected"), for: .normal)
+         starButton.isSelected = false
+         ispracticed = false
+         starButton.setImage(UIImage(named: "Star"), for: .normal)
             
-        }else{
-            
-            starButton.setImage(UIImage(named: "Star"), for: .normal)
-            
-        }
     }
     
     func activeButton(flag: Bool){
-        isOn = starButton.isSelected
-        //print("Button status \(isOn)")
-       // isOn = flag
-        if(isOn == true){
+       
+        if(starButton.isSelected == true){
             starButton.setImage(UIImage(named: "Star-Selected"), for: .normal)
             
         }else{
@@ -501,8 +473,7 @@ class addTodayViewController: UIViewController{
    
     @IBAction func saveButtonTappde(_ sender: Any) {
         
-//        let ispracticed = isOn
-        let ispracticed = starButton.isSelected
+        
         var noteData = noteTextView.text
         if noteData == "Write Your Notes Here. . . "{
             noteData = ""
@@ -513,7 +484,8 @@ class addTodayViewController: UIViewController{
         
         if(savingResult == 0){
             
-            showToast(message: "Data Saved. . .", duration: 3)
+            showToast(message: "Data Saved Succefully", duration: 3)
+           
             delegate?.passUserObject(user: userObject)
           
             for controller in self.navigationController!.viewControllers as Array {
@@ -601,3 +573,6 @@ extension addTodayViewController : UITextViewDelegate{
 protocol ReceiveData {
     func passUserObject(user: User)
 }
+
+
+

@@ -195,6 +195,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9098AC282345AD5700748D4C /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				E11D15092236AE1A000209B9 /* Views */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		A89A5FE322E418F900C0F4D7 /* Pie Chart Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,7 +299,7 @@
 				E11D150A2236AF34000209B9 /* Controllers */,
 				E1F63FBC220B8C3A0001FC6D /* Models */,
 				E179F53821F294A600FBD293 /* Images */,
-				E11D15092236AE1A000209B9 /* Views */,
+				9098AC282345AD5700748D4C /* New Group */,
 				E189D68521E4FA430078380B /* AppDelegate.swift */,
 				E154CB90221F05DF007ACAC3 /* MainNavigationController.swift */,
 				E189D68921E4FA430078380B /* Main.storyboard */,

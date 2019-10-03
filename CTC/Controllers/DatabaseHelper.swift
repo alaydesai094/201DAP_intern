@@ -732,6 +732,7 @@ class DatabaseHelper{
         let resultFlag = maintainTrackingDay(date: date, flag: practised, practice: practice)
         
         print(resultFlag ? "Trakcing Day Maintened Successfully" : "Error in Maintenance Tracking Days")
+        
         var practicePracticedDays = practice.practiseddays
 
         

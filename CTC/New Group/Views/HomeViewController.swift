@@ -387,14 +387,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //        let cell = tableView.dequeueReusableCell(withIdentifier: "ResolutionCell") as! HomeTableViewCell
-        //
-        ////        cell.reolutionTextLabel.text = Resolutions[indexPath.row]
-        //        cell.reolutionTextLabel.text = "Resolutions[indexPath.row]"
-        //
-        ////        cell.textLabel?.text = Resolutions[indexPath.row]
-//        print(lastCellNumber)
-//        print(indexPath.section)
         if (indexPath.section == lastCellNumber-1){
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "blankCell")
@@ -411,7 +403,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell.practiceIconImage.image = UIImage(named:practices[indexPath.row + indexPath.section].image_name!)
             let switchFlag = self.isSwitchOn(practice: practices[indexPath.row + indexPath.section], practicesData: practicesData)
             if (switchFlag != nil){
-//                cell.yesNoSwitch.isOn = switchFlag!}else{cell.yesNoSwitch.isOn = false
                 
                 cell.isOn = switchFlag!
                 cell.activeButton(flag: switchFlag!)
@@ -427,15 +418,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
         }
         
-        
-        
-        //
-        //        if(indexPath.row % 2 != 0){
-        //
-        //            cell.backgroundColor = UIColor (displayP3Red: 33/255, green: 71/255, blue: 157/255, alpha: 0.7)
-        //            cell.reolutionTextLabel.textColor = UIColor.white
-        //
-        //        }
         
         
         
@@ -499,10 +481,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 isUpdating = false
             }
             
-            ///////
-        
-//            let practiceFlag = dbHelper.addPractices(practice: practice!, image_name: image_Name, user: userObject)
-//            isUpdating = false
         
         if(practiceFlag == 1){
             
@@ -571,10 +549,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func isSwitchOn(practice: Practice, practicesData: [PracticeData]?) -> Bool? {
-//        print("Practices ------------------------")
-//        print(practice)
-//        print("Practices Data ------------------------")
-//        print(practicesData)
+
         if(practicesData != nil){
             for data in practicesData!{
                 
@@ -590,24 +565,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     
-    //    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    //        return 80
-    //    }
-
-    
-    //// Table View Code
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
