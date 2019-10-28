@@ -334,7 +334,7 @@ class addTodayViewController: UIViewController{
    
     @IBAction func setReminder(_ sender: Any) {
       
-        UIApplication.shared.open(URL(string: "x-apple-reminder://")!, options: [:],completionHandler: nil)
+        UIApplication.shared.open(URL(string: "x-apple-reminderkit://")!, options: [:],completionHandler: nil)
     }
     
     

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5F703B0D9AB5E6CA3F46F6CB /* Pods_CTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A47CD35F47AF241C465180 /* Pods_CTC.framework */; };
+		90E185442354E35100DD46C5 /* eighth.png in Resources */ = {isa = PBXBuildFile; fileRef = 90E185432354E35100DD46C5 /* eighth.png */; };
+		90E185472354E36200DD46C5 /* seventh.png in Resources */ = {isa = PBXBuildFile; fileRef = 90E185452354E36200DD46C5 /* seventh.png */; };
+		90E185482354E36200DD46C5 /* sixth.png in Resources */ = {isa = PBXBuildFile; fileRef = 90E185462354E36200DD46C5 /* sixth.png */; };
 		A83F3DFD22D5656900CD6870 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83F3DFC22D5656900CD6870 /* GraphViewController.swift */; };
 		A84A27BC22E7BD6F002C29A1 /* Launchscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = A84A27BB22E7BD6F002C29A1 /* Launchscreen.png */; };
 		A879D997228C6A8200EE2D0F /* 201dayap-logo-STARS.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A879D996228C6A8200EE2D0F /* 201dayap-logo-STARS.jpg */; };
@@ -90,6 +93,9 @@
 
 /* Begin PBXFileReference section */
 		64A47CD35F47AF241C465180 /* Pods_CTC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CTC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		90E185432354E35100DD46C5 /* eighth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = eighth.png; path = how/eighth.png; sourceTree = "<group>"; };
+		90E185452354E36200DD46C5 /* seventh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = seventh.png; path = how/seventh.png; sourceTree = "<group>"; };
+		90E185462354E36200DD46C5 /* sixth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sixth.png; path = how/sixth.png; sourceTree = "<group>"; };
 		A83F3DFC22D5656900CD6870 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		A84A27BB22E7BD6F002C29A1 /* Launchscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Launchscreen.png; sourceTree = "<group>"; };
 		A879D996228C6A8200EE2D0F /* 201dayap-logo-STARS.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "201dayap-logo-STARS.jpg"; sourceTree = "<group>"; };
@@ -264,6 +270,9 @@
 				A8D96A7C22E8B2AF00AD3B66 /* first.png */,
 				A8D96A7F22E8B2AF00AD3B66 /* fourth.png */,
 				A8D96A7D22E8B2AF00AD3B66 /* second.png */,
+				90E185432354E35100DD46C5 /* eighth.png */,
+				90E185452354E36200DD46C5 /* seventh.png */,
+				90E185462354E36200DD46C5 /* sixth.png */,
 				A8D96A7E22E8B2AF00AD3B66 /* third.png */,
 				A879D9A2228C877700EE2D0F /* teresa.png */,
 				A84A27BB22E7BD6F002C29A1 /* Launchscreen.png */,
@@ -428,10 +437,13 @@
 				A8D96A8122E8B2B000AD3B66 /* first.png in Resources */,
 				A8D96A8322E8B2B000AD3B66 /* third.png in Resources */,
 				A879D9A3228C877700EE2D0F /* teresa.png in Resources */,
+				90E185482354E36200DD46C5 /* sixth.png in Resources */,
 				E189D69321E4FA450078380B /* LaunchScreen.storyboard in Resources */,
+				90E185472354E36200DD46C5 /* seventh.png in Resources */,
 				A84A27BC22E7BD6F002C29A1 /* Launchscreen.png in Resources */,
 				E189D69021E4FA450078380B /* Assets.xcassets in Resources */,
 				E133554422665FDD00C3E0CF /* FinalLogo.png in Resources */,
+				90E185442354E35100DD46C5 /* eighth.png in Resources */,
 				E15E290121EFA76900F2177F /* Icons.xcassets in Resources */,
 				A8AD33D822E0B535004B881D /* Images.xcassets in Resources */,
 				A8D96A8422E8B2B000AD3B66 /* fourth.png in Resources */,
@@ -628,7 +640,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -683,7 +695,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -703,12 +715,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J3M2YK24PW;
 				INFOPLIST_FILE = CTC/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.alay.app;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alay.CTC-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -726,12 +738,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J3M2YK24PW;
 				INFOPLIST_FILE = CTC/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.alay.app;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alay.CTC-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;

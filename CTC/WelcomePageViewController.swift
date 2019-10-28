@@ -18,8 +18,8 @@ class WelcomePageViewController: UIViewController, UICollectionViewDelegate, UIC
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    var images : [String] = ["","first", "second", "third", "fourth","fifth"]
-    var descriptionLabelText = ["","Welcome To the 201 Day principal of achievement - 1", "Welcome To the 201 Day principal of achievement - 2","Welcome To the 201 Day principal of achievement - 3","Welcome To the 201 Day principal of achievement - 4","Welcome To the 201 Day principal of achievement - 5"]
+    var images : [String] = ["","first", "second", "third", "fourth","fifth","sixth","seventh","eighth"]
+    var descriptionLabelText = ["","Welcome To the 201 Day principal of achievement - 1", "Welcome To the 201 Day principal of achievement - 2","Welcome To the 201 Day principal of achievement - 3","Welcome To the 201 Day principal of achievement - 4","Welcome To the 201 Day principal of achievement - 5","Welcome To the 201 Day principal of achievement - 6","Welcome To the 201 Day principal of achievement - 7","Welcome To the 201 Day principal of achievement - 8"]
     var frame = CGRect(x: 0, y: 0, width: 0, height: 0 )
 
     override func viewDidLoad() {
