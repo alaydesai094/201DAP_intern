@@ -73,19 +73,6 @@ class CircularViewController: UIViewController {
 
         }
 
-
-
-
-//        self.percentageLabel.text = "\(startValue)%"
-//        startValue += 1
-//
-//        if(startValue >= endValue){
-//
-//            startValue = endValue
-//
-//        }
-
-
     }
 
 

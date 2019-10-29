@@ -1128,10 +1128,6 @@ class DatabaseHelper{
             }
             
             
-            
-            print("Final Data -------------------------------------")
-//            print(dictTemp)
-            
         }
         
     }

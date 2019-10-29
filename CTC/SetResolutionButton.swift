@@ -36,7 +36,6 @@ class SetResolutionButton: UIButton {
         
         backgroundColor = .red
         setTitleColor(UIColor.black, for: .normal)
-//        setImage(UIImage(named: "No"), for: .normal)
         addTarget(self, action: #selector(SetResolutionButton.buttonPressed), for: .touchUpInside)
         
     }

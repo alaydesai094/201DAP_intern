@@ -26,37 +26,21 @@ class addTodayViewController: UIViewController{
     var isOn : Bool!
     var ispracticed : Bool!
     
-    ////variables
- 
+    // variables
     
     @IBOutlet weak var progressView: CircularProgressView!
-    
-    
     @IBOutlet weak var percentageLabel: AnimationLabel!
-    
     @IBOutlet weak var resolutionTextField: UITextField!
     @IBOutlet weak var resolutionPickerView: UIPickerView!
-    
-    
     @IBOutlet weak var dayOfYearLabel: UILabel!
     @IBOutlet weak var trackingDayLabel: UILabel!
-    
-    
     @IBOutlet weak var noteTextView: UITextView!
-    
     @IBOutlet weak var noteBackgroundView: UIView!
-    
     @IBOutlet weak var starButton: UIButton!
-  
-     @IBOutlet weak var reminderButton: UIButton!
+    @IBOutlet weak var reminderButton: UIButton!
     
-   
-    //    @IBOutlet weak var dropDownButton: UIButton!
-//    @IBOutlet weak var dropDownTableView: UITableView!
-//    @IBOutlet weak var dropDownTableViewHC: NSLayoutConstraint!
-//
+
     var isTableViewVisible = false
-    
     var startValue: Double = 0
     var endValue: Double = 70
     var animationDuration: Double = 2.0
@@ -65,9 +49,8 @@ class addTodayViewController: UIViewController{
     var picker: UIDatePicker = UIDatePicker()
     var popUpDatePicker: UIDatePicker = UIDatePicker()
   
-
+  
     override func viewDidLoad() {
-        
       
         super.viewDidLoad()
         dbHelper = DatabaseHelper()
@@ -89,10 +72,7 @@ class addTodayViewController: UIViewController{
         let year = formatter.string(from: yourDate!)
          firstDayOfYear = DateComponents(calendar: .current, year: Int(year), month: 1, day: 1).date!
         
-        //// getting current year
-        
-        
-        
+        //getting current year
         practicesArray = dbHelper.getPractices(user: userObject)!
         practicesData =  dbHelper.getPracticeDataByDate(date: selectedDate.dateFormate()!)
         print(practicesData)
@@ -131,7 +111,6 @@ class addTodayViewController: UIViewController{
         noteTextView.textColor = UIColor.lightGray
         
         
-        
         let barButton = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(self.saveButtonTapped))
         
         
@@ -139,10 +118,6 @@ class addTodayViewController: UIViewController{
     
         starButton.isSelected = true
         isOn =  starButton.isSelected
-       
-       // print("Button status \(isOn)")
-        // listener for keyboard
-        
         
         NotificationCenter.default.addObserver(self , selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -150,9 +125,7 @@ class addTodayViewController: UIViewController{
         
         self.setData()
         
-        
       
-        
         //MARK: Custome Done Tool bar
         
         //MARK: Custome Done Tool bar for Popup
@@ -163,10 +136,9 @@ class addTodayViewController: UIViewController{
         
         popUpToolBar.setItems([popUpDoneButton], animated: true)
         popUpToolBar.isUserInteractionEnabled = true
-//        practiceStartedDate.inputAccessoryView = popUpToolBar
         
-     
     }
+    
     
     func setData() {
         print((practicesArray[myIndex].startedday)! as Date)
@@ -223,7 +195,7 @@ class addTodayViewController: UIViewController{
     //MARK: Save button tapped from bar
     @objc func saveButtonTapped() {
         
-        self.showToast(message : "Data saved Succefully", duration: 3)
+        showToast(message : "Data saved Succefully", duration: 3)
         
         let ispracticed = isOn
        // print(ispracticed)
@@ -237,7 +209,7 @@ class addTodayViewController: UIViewController{
         
         if(savingResult == 0){
             
-            self.showToast(message: "Data Saved Succefully", duration: 3)
+            showToast(message: "Data Saved Succefully", duration: 3)
             delegate?.passUserObject(user: userObject)
 
             for controller in self.navigationController!.viewControllers as Array {
@@ -383,7 +355,6 @@ class addTodayViewController: UIViewController{
         
         label.layer.cornerRadius = 10
         label.layer.backgroundColor = UIColor.white.cgColor
-//        label.titleLabel?.textColor = UIColor.black
         label.layer.shadowColor = UIColor.darkGray.cgColor
         label.layer.shadowRadius = 4
         label.layer.shadowOffset = CGSize(width: 0, height: 3.0)
@@ -532,6 +503,7 @@ extension addTodayViewController : UIPickerViewDataSource, UIPickerViewDelegate{
    
     
 }
+
 extension UITextField{
     
     
@@ -547,6 +519,7 @@ extension UITextField{
     }
     
 }
+
 
 extension addTodayViewController : UITextViewDelegate{
     
@@ -570,9 +543,7 @@ extension addTodayViewController : UITextViewDelegate{
     
 }
 
+
 protocol ReceiveData {
     func passUserObject(user: User)
 }
-
-
-

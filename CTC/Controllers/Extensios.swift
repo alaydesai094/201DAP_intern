@@ -278,8 +278,6 @@ extension Date {
         // again convert your date to string
         let myStringafd = formatter.string(from: yourDate!)
         
-        //        let finalDate = formatter.date(from: myStringafd)
-        //        print(myStringafd)
         // Do any additional setup after loading the view.
         return myStringafd
         
@@ -303,8 +301,6 @@ extension Date {
         // again convert your date to string
         let myStringafd = formatter.string(from: yourDate!)
         
-//        let finalDate = formatter.date(from: myStringafd)
-//        print(myStringafd)
         // Do any additional setup after loading the view.
         return myStringafd
         
@@ -329,18 +325,16 @@ extension Date {
         // Formatter for printing the date, adjust it according to your needs:
         let fmt = DateFormatter()
         fmt.dateFormat = "dd/MM/yyyy"
-        
-        // While date <= endDate ...
      
         
+        
             while  startdate <= endDate {
-//                print(fmt.string(from: date))
+
                 let tempDate = fmt.string(from: startdate)
 
                 
                 dateArray.append(fmt.date(from: tempDate)!)
                 // Advance by one day:
-    //            date = Calendar.dateByAddingUnit(.Day, value: 1, toDate: date, options: [])!
                 
                 startdate = Calendar.current.date(byAdding: .day, value: 1, to: startdate)!
         }

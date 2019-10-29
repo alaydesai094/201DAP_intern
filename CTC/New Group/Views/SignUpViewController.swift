@@ -33,7 +33,7 @@ class SignUpViewController: UIViewController {
         dbHelper = DatabaseHelper()
         
         // to make text field round corner
-        // view.setGradientBackground(colorOne: Theme.gradientColor1, colorTwo: Theme.gradientColor2)
+       
         nameTextField.clipsToBounds = true
         passwordTextField.clipsToBounds = true
         emailTextField.clipsToBounds = true
@@ -63,7 +63,6 @@ class SignUpViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
         self.view.addGestureRecognizer(tapGesture)
         
-
         // Do any additional setup after loading the view.
     }
     

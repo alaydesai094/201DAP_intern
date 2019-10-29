@@ -45,37 +45,6 @@ class MorePageViewController: UIViewController {
 
 extension MorePageViewController : UITableViewDelegate, UITableViewDataSource{
     
-    
-//    //here
-//    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//
-//        if section == 0{
-//
-//            return 30
-//
-//        }
-//        else{
-//
-//            return 10
-//
-//        }
-//    }
-//
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        return Resolutions.count
-//    }
-//
-//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "spaceCell")
-//
-//
-//        return cell
-//    }
-//    ////here
-//
-    
-    
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return moreOptionIconList.count
     }
@@ -202,8 +171,4 @@ extension MorePageViewController : UITableViewDelegate, UITableViewDataSource{
         }
         
     }
-    
-    
-    
-    
 }

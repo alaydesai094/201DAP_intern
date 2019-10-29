@@ -33,22 +33,15 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     //// variables
     
-    
     @IBOutlet weak var addResolutionButton: UIButton!
     @IBOutlet weak var imageIconButton: UIButton!
-    
     @IBOutlet weak var homeTableView: UITableView!
-    
     @IBOutlet weak var dateTextField: UITextField!
-    
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var titleTextLabel: UILabel!
-    
     @IBOutlet weak var practiceTextfield: UITextField!
-    
     @IBOutlet weak var popUpFregroundView: UIView!
-    
     @IBOutlet var popUpView: UIView!
     @IBOutlet weak var practiceStartedDate: UITextField!
     
@@ -56,7 +49,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         
-//        // MARK: Testing
+        
+       // MARK: Testing
         
         let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
         popUpView.frame = frame
@@ -118,8 +112,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         practiceStartedDate.inputAccessoryView = popUpToolBar
         
         //MARK: Custome Done Tool bar for Popup
-        
-        
+    
         
         addResolutionButton.backgroundColor = Theme.secondaryColor
         addResolutionButton.layer.cornerRadius = addResolutionButton.frame.height/2
@@ -133,8 +126,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
        practices = self.getPractices()
         practicesData = self.getPracticesData(date: selectedDate)
         
-//        dbHelper.addPracticeData(note: "Manuel - 1", practised: true, practice: practices[0])
-        // for updating homeTableview from another view Controller
         NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.reloadHomeTableView), name:NSNotification.Name(rawValue: "NotificationID"), object: nil)
         
         
@@ -218,13 +209,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        let getPractices = Practices()
-//
-//        practicesData = getPractices.getPractices()
-//        homeTableView.reloadData()
-//    }
+
     override func viewDidAppear(_ animated: Bool) {
         selectedDate = datePicker.date.dateFormate()!
         self.refreshTableview(date: selectedDate)
@@ -236,7 +221,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         selectedDate = datePicker.date.dateFormate()!
         
         let selectedData : [PracticeData] = dbHelper.getPracticeDataByDate(date: selectedDate)!
-//        print(selectedData)
+
 
         practices = dbHelper.getPractices(date: selectedDate, user: userObject)
         practicesData = selectedData
@@ -247,15 +232,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     @objc func popUpDateSelected() {
-//
-//        let selectedDate = datePicker.date.dateFormate()!
-//
-//        let selectedData : [PracticeData] = dbHelper.getPracticeDataByDate(date: selectedDate)!
-//        print(selectedData)
-//
-//        practices = self.getPractices()
-//        practicesData = selectedData
-//        self.homeTableView.reloadData()
+
         
         self.view.endEditing(true)
         
@@ -394,9 +371,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
         }
         else{
-//        print(indexPath)
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResolutionCell") as! HomeTableViewCell
-//            print("in \(indexPath.section)")
+
         cell.practiceTextLabel.text = practices[indexPath.row + indexPath.section].practice
             cell.layer.borderWidth = 0.5
             cell.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.4).cgColor
@@ -413,7 +390,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 
             cell.practice = practices[indexPath.row + indexPath.section]
             cell.selectedDate = datePicker.date.dateFormate()!
-//            print(self.isSwitchOn(practice: practices[indexPath.row + indexPath.section], practicesData: practicesData))
+
             return cell
             
         }
@@ -498,6 +475,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             self.popUpDatePicker.date = Date()
             self.imageIconButton.setImage(UIImage(named: "Image-gallery"), for: .normal)
             self.popUpView.removeFromSuperview()
+             
+            showToast(message: "Data Add", duration: 3)
             
             }
             

@@ -64,7 +64,6 @@ class HomeTableViewCell: UITableViewCell {
         
         if resultFlag == 0{
             
-           showToast(message: "Data Saved", duration: 3,view: view)
             print("Data Saved")
             
         }else if resultFlag == 1{
@@ -110,6 +109,19 @@ class HomeTableViewCell: UITableViewCell {
     
    
     
+    func showpop(controller: UIViewController, message : String, seconds: Double){
+        
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        
+        alert.view.backgroundColor = .black
+        alert.view.alpha = 0.5
+        alert.view.layer.cornerRadius = 15
+        
+        controller.present(alert, animated: true)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + seconds) {
+        alert.dismiss(animated: true)
+        }
+    }
     
     
 }

@@ -17,9 +17,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var UserNameTextField: UITextField!
     @IBOutlet weak var PasswordTextField: UITextField!
-    
     @IBOutlet weak var passwordMessage: UILabel!
-    
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     
@@ -35,12 +33,8 @@ class LoginViewController: UIViewController {
             PasswordTextField.clipsToBounds = true
             UserNameTextField.layer.cornerRadius = 10
             PasswordTextField.layer.cornerRadius = 10
-            
-         //   view.setGradientBackground(colorOne: Theme.gradientColor1, colorTwo: Theme.gradientColor2)
-            
-    //        UserNameTextField.setUnderLine()
+ 
             UserNameTextField.setLeftPadding(iconName: "Email")
-    //        PasswordTextField.setUnderLine()
             PasswordTextField.setLeftPadding(iconName: "Password")
             UserNameTextField.customePlaceHolder(text: "Enter Your Email", color: UIColor.blue.withAlphaComponent(0.4))
             PasswordTextField.customePlaceHolder(text: "Enter Your Password", color: UIColor.blue.withAlphaComponent(0.4))
@@ -141,15 +135,7 @@ class LoginViewController: UIViewController {
         userObjectPass = dbHelper.checkLoggedIn()
         if (userObjectPass != nil){
             
-            //            for user in dbHelper.getUser(){
-            //
-            //                userObject = user
-            //
-            //            }
-            
             performSegue(withIdentifier: "loginToHome", sender: self)
-            //            let vc = storyboard?.instantiateViewController(withIdentifier: "Home") as! HomeViewController
-            //            show(vc, sender: self)
             
         }
         

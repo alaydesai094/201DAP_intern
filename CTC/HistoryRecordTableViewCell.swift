@@ -121,10 +121,10 @@ class HistoryRecordTableViewCell: UITableViewCell,UICollectionViewDelegate, UICo
         
         if(resultFlag == 0){
             print("deleted")
-//            showToast(message: "\(pracName!) Deleted", duration: 3)
+            //showToast(message: "\(pracName!) Deleted", duration: 3, view: <#UIView#>)
         }else{
             print("error")
-//            showToast(message: "Deletion Error", duration: 3)
+            //showToast(message: "Deletion Error", duration: 3, view: <#UIView#>)
         }
         
         self.refreshTableview(date: selectedDate)

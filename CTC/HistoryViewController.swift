@@ -50,8 +50,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 }
                 
             }
-//            print("complete: - - - - : \(completedHistory)")
-//            print("Delete: - - - - : \(deletedHistory)")
+
             
         }
         // Do any additional setup after loading the view.
@@ -212,8 +211,6 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 }
                 
             }
-            //            print("complete: - - - - : \(completedHistory)")
-            //            print("Delete: - - - - : \(deletedHistory)")
             
         }
         

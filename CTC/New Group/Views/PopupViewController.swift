@@ -77,17 +77,13 @@ class PopupViewController: UIViewController {
             
             
             let practiceFlag = 1
-//                newPractice.addPractices(practice: practice!, image_name: image_Name,)
             
             if(practiceFlag == 1){
                 
                 showAlert(title: "Warning", message: "Practice Already Exist. . . ", buttonTitle: "Try Again")
                 
             }
-//            else if(practiceFlag == 2){
-//                
-//                showAlert(title: "Error", message: "Please Report an Error . . .", buttonTitle: "Try Again")
-//                
+             
             
         }
         
@@ -116,8 +112,6 @@ class PopupViewController: UIViewController {
         present(actionSheet,animated: true)
         
     }
-    
-    
 
     /*
     // MARK: - Navigation
