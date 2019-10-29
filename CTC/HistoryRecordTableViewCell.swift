@@ -71,7 +71,6 @@ class HistoryRecordTableViewCell: UITableViewCell,UICollectionViewDelegate, UICo
         
     }
     
-    
     @IBAction func restoreButton(_ sender: Any) {
         let section = (sender as AnyObject).tag / 100
         let item = (sender as AnyObject).tag % 100

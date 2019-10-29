@@ -50,7 +50,6 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 }
                 
             }
-
             
         }
         // Do any additional setup after loading the view.

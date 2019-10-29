@@ -49,7 +49,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         
-        
        // MARK: Testing
         
         let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)

@@ -205,7 +205,7 @@
             <objects>
                 <viewController storyboardIdentifier="Home" id="ict-OM-Zcf" customClass="HomeViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lrV-7v-uhR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CnU-dP-j9Q">
@@ -1087,7 +1087,7 @@
             <objects>
                 <viewController id="JPR-DW-rmG" customClass="WelcomePageViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ow0-ZQ-csl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="edV-bk-heZ">
@@ -1628,15 +1628,15 @@
                                 <rect key="frame" x="0.0" y="56" width="414" height="703"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" rowHeight="252" id="W61-Tu-CGM" customClass="HistoryRecordTableViewCell" customModule="CTC" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="252"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" rowHeight="335" id="W61-Tu-CGM" customClass="HistoryRecordTableViewCell" customModule="CTC" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="335"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W61-Tu-CGM" id="dph-Dx-x73">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="252"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="335"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgG-fD-kLR" customClass="HistoryCardCollectionView" customModule="CTC" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="11" width="374" height="188"/>
+                                                    <rect key="frame" x="20" y="11" width="374" height="271"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XHf-9p-aJT">
                                                         <size key="itemSize" width="346" height="169.5"/>
@@ -1646,7 +1646,7 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCollectionCell" id="v9z-HJ-UbW" customClass="HistoryCardCollectionViewCell" customModule="CTC" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="9.5" width="346" height="169.5"/>
+                                                            <rect key="frame" x="0.0" y="51" width="346" height="169.5"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="346" height="169.5"/>
@@ -1760,7 +1760,7 @@
                                                     </cells>
                                                 </collectionView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pmM-76-SiV">
-                                                    <rect key="frame" x="8" y="207" width="398" height="37"/>
+                                                    <rect key="frame" x="8" y="290" width="398" height="37"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gb-69-WCB">
                                                             <rect key="frame" x="0.0" y="0.0" width="70" height="37"/>
@@ -1776,7 +1776,7 @@
                                                         <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="6ro-OC-aC6">
                                                             <rect key="frame" x="80" y="0.0" width="238" height="37"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="199" id="LD5-hg-3Iv"/>
+                                                                <constraint firstAttribute="width" constant="238" id="LD5-hg-3Iv"/>
                                                             </constraints>
                                                             <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1811,21 +1811,21 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryHeaderCell" rowHeight="60" id="DO2-Lb-GRm" customClass="HistoryHeaderCellTableViewCell" customModule="CTC" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="280" width="414" height="60"/>
+                                        <rect key="frame" x="0.0" y="363" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DO2-Lb-GRm" id="5Zx-G6-SX9">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdm-Ax-fOA">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                                    <rect key="frame" x="0.0" y="20" width="414" height="60"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="xdm-Ax-fOA" firstAttribute="centerY" secondItem="5Zx-G6-SX9" secondAttribute="centerY" id="Iwm-JY-0uB"/>
+                                                <constraint firstItem="xdm-Ax-fOA" firstAttribute="centerY" secondItem="5Zx-G6-SX9" secondAttribute="centerY" constant="20" id="Iwm-JY-0uB"/>
                                                 <constraint firstItem="xdm-Ax-fOA" firstAttribute="centerX" secondItem="5Zx-G6-SX9" secondAttribute="centerX" id="WWf-f8-zkj"/>
                                                 <constraint firstItem="xdm-Ax-fOA" firstAttribute="height" secondItem="5Zx-G6-SX9" secondAttribute="height" id="dKR-X3-pHv"/>
                                                 <constraint firstItem="xdm-Ax-fOA" firstAttribute="width" secondItem="5Zx-G6-SX9" secondAttribute="width" id="yWR-1W-v3Y"/>
@@ -1858,7 +1858,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gXh-Fy-ok8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1243" y="2005"/>
+            <point key="canvasLocation" x="-1243.4782608695652" y="2004.9107142857142"/>
         </scene>
         <!--More-->
         <scene sceneID="Kzh-96-Xzd">
