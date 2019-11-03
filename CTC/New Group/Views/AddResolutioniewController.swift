@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import UserNotifications
 
 
 class AddResolutioniewController: UIViewController, UITabBarDelegate, UITableViewDataSource {
@@ -27,6 +27,9 @@ class AddResolutioniewController: UIViewController, UITabBarDelegate, UITableVie
 
         // Do any additional setup after loading the view.
         self.ResolutionTableView.keyboardDismissMode = .interactive
+        
+        
+       
         
     }
     
@@ -61,6 +64,13 @@ class AddResolutioniewController: UIViewController, UITabBarDelegate, UITableVie
         ResolutionTextField.text = ""
         
     }
+    
+    
+    
+    
+    
+    
+ 
     
     
     

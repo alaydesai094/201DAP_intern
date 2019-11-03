@@ -49,16 +49,17 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         
+        
+        //notification
+        notif()
+        
+       
        // MARK: Testing
         
         let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
         popUpView.frame = frame
         
-        let dateForDateComp = Date().addingTimeInterval(4)
         
-        let dateComp = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: dateForDateComp)
-        
-        custome(dateComponent: dateComp)
         // MARK: Testing
         
         super.viewDidLoad()
@@ -125,7 +126,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
        practices = self.getPractices()
         practicesData = self.getPracticesData(date: selectedDate)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.reloadHomeTableView), name:NSNotification.Name(rawValue: "NotificationID"), object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.reloadHomeTableView), name:NSNotification.Name(rawValue: "NotificationID"), object: nil)
         
         
         // for popup view
@@ -157,29 +158,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
        
     }
     
-    @objc func custome(dateComponent: DateComponents){
-        
-        
-        var dateComp = dateComponent
-        
-        let content = UNMutableNotificationContent()
-        content.body = "Body"
-        content.title = "Title"
-        content.sound = UNNotificationSound.default
-        
-        let trigger2 = UNCalendarNotificationTrigger(dateMatching: dateComp, repeats: true)
-        
-        let request = UNNotificationRequest(identifier: "Test", content: content, trigger: trigger2)
-        
-        UNUserNotificationCenter.current().add(request) { (err) in
-            if err == nil{
-                
-                dateComp.day = dateComp.second! + 3
-                print("Complete")
-            }
-        }
-        
-    }
     
     
     @objc func DatePickerValueChanged(datePicker: UIDatePicker){
@@ -524,7 +502,56 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.datePicker.minimumDate = oldestDate
         self.homeTableView.reloadData()
         
+        
+        //showToast(message: "Data Saved Succefully", duration: 3)
+                 
+       
+
+       
     }
+    
+     //-------------------
+    // Notification
+    // --------------------
+    
+    func notif(){
+       
+//                 // Notification content
+//                    let content = UNMutableNotificationContent()
+//                    content.title = "Title"
+//                    content.body = "Body"
+//                    content.sound = UNNotificationSound.default
+//
+//
+//                // data to set the trigger
+//                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+//
+//                // request the notification
+//                    let request = UNNotificationRequest(identifier: "TestIdentifier", content: content, trigger: trigger)
+//
+//                // call the notification
+//                    UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        
+        
+        
+        let notification = UNMutableNotificationContent()
+        notification.title = "Hello!"
+        //notification.subtitle = "Something"
+        notification.body = "Hello_message_body"
+        notification.sound = UNNotificationSound.default
+
+        //add notification for Friday (after 5 days) at 10:00 a.m.
+        var dateComponents = DateComponents()
+        dateComponents.weekday = 1
+        dateComponents.hour = 10
+
+        let notificationTrigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        let request = UNNotificationRequest(identifier: "TestIdentifier", content: notification, trigger: notificationTrigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        
+        
+    }
+    
     
     func isSwitchOn(practice: Practice, practicesData: [PracticeData]?) -> Bool? {
 

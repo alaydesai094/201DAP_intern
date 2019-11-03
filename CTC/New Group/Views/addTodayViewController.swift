@@ -78,7 +78,6 @@ class addTodayViewController: UIViewController{
         print(practicesData)
         
         // for Reminder
-        
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in })
        
         
@@ -195,7 +194,9 @@ class addTodayViewController: UIViewController{
     //MARK: Save button tapped from bar
     @objc func saveButtonTapped() {
         
-        showToast(message : "Data saved Succefully", duration: 3)
+        
+        
+        
         
         let ispracticed = isOn
        // print(ispracticed)
@@ -209,12 +210,16 @@ class addTodayViewController: UIViewController{
         
         if(savingResult == 0){
             
-            showToast(message: "Data Saved Succefully", duration: 3)
+           
             delegate?.passUserObject(user: userObject)
 
             for controller in self.navigationController!.viewControllers as Array {
                 if controller.isKind(of: HomeViewController.self) {
+                    
                     self.navigationController!.popToViewController(controller, animated: true)
+
+                    
+                    
                     break
                 }
             }
@@ -322,7 +327,7 @@ class addTodayViewController: UIViewController{
    
     }
     
-
+    
     /*
     // MARK: - Navigation
 
@@ -461,7 +466,9 @@ class addTodayViewController: UIViewController{
           
             for controller in self.navigationController!.viewControllers as Array {
                 if controller.isKind(of: HomeViewController.self) {
+                    
                     self.navigationController!.popToViewController(controller, animated: true)
+                
                     break
                 }
             }

@@ -11,9 +11,26 @@ import CoreData
 import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
+    
+    
+    // Setting to run notification in foreground
+       func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+           completionHandler([.alert, .sound])
+       }
+    
+    //handling notification
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+     
+        if response.notification.request.identifier == "TestIdentifier" {
+            print("handling notifications with the TestIdentifier Identifier")
+        }
+     
+        completionHandler()
+     
+    }
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -57,56 +74,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
 
          //MARK: to select app launch over
-        
-        
-      // Notification
-//
-//        let dateForDateComp = Date().addingTimeInterval(4)
-//
-//        let dateComp = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: dateForDateComp)
-//
-//        custome(dateComponent: dateComp)
-//
-//
-//        let date = Date().addingTimeInterval(5)
-//        let timer = Timer(fireAt: date, interval: 0, target: self, selector: #selector(self.custome(dateComponent:)), userInfo: nil, repeats: false)
-//        RunLoop.main.add(timer, forMode: .common)
-
-        //MARK: notification over
-        
-        registerForPushNotifications()
-        
-        return true
-    }
     
-    
-    
-    
-    @objc func custome(dateComponent: DateComponents){
+        //Notification Settings
+     
+        //
+        UNUserNotificationCenter.current().delegate = self
         
-        
-        var dateComp = dateComponent
-        
-        let content = UNMutableNotificationContent()
-        content.body = "Body"
-        content.title = "Title"
-        content.sound = UNNotificationSound.default
-        
-        let trigger2 = UNCalendarNotificationTrigger(dateMatching: dateComp, repeats: true)
-        
-        let request = UNNotificationRequest(identifier: "Test", content: content, trigger: trigger2)
-        
-        UNUserNotificationCenter.current().add(request) { (err) in
-            if err == nil{
-                
-                dateComp.day = dateComp.second! + 3
-                  print("Complete")
-//                self.custome(dateComponent: dateComp)
-              
-                
-            }
+        // Permission for Notification
+       UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+           print("granted: (\(granted)")
         }
         
+        return true
     }
     
 
@@ -138,52 +117,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: Notification
     //--------------------------------
     
-    
-    // Get Notifocation request
-    func registerForPushNotifications() {
-            UNUserNotificationCenter.current()
-              .requestAuthorization(options: [.alert, .sound, .badge]) {
-                [weak self] granted, error in
-                  
-                print("Permission granted: \(granted)")
-                guard granted else { return }
-                self?.getNotificationSettings()
-            }
-       }
-
-   // Declines Permissions
-      func getNotificationSettings() {
-        UNUserNotificationCenter.current().getNotificationSettings { settings in
-          print("Notification settings: \(settings)")
-         
-          guard settings.authorizationStatus == .authorized else { return }
-          DispatchQueue.main.async {
-            UIApplication.shared.registerForRemoteNotifications()
-          }
-
-        }
-      }
-
-    
-    
-    // iOS will call these to inform you about the result of registerForRemoteNotifications() from the
-    //  Apple Push Notification service.
-    
-    func application(
-      _ application: UIApplication,
-      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
-    ) {
-      let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
-      let token = tokenParts.joined()
-      print("Device Token: \(token)")
+    func notifica(){
+        
+        
     }
-
-    func application(
-      _ application: UIApplication,
-      didFailToRegisterForRemoteNotificationsWithError error: Error) {
-      print("Failed to register: \(error)")
-    }
-
+    
+    
     
 
     // MARK: - Core Data stack
