@@ -11,10 +11,13 @@ import UIKit
 import EventKit
 import Charts
 import SwiftCharts
+import UserNotifications
 
 class GraphViewController: UIViewController, ChartViewDelegate {
     
     var selectedDate: Date!
+    
+  
   
     var firstDayOfYear : Date! = DateComponents(calendar: .current, year: 2019, month: 1, day: 1).date!
  
@@ -26,6 +29,7 @@ class GraphViewController: UIViewController, ChartViewDelegate {
     var currentPractice : Practice!
     var practices:[Practice]!
     var practice = [Practice]()
+    var percentage: Int!
     
     
     @IBOutlet weak var pieChart: PieChartView!
@@ -45,6 +49,8 @@ class GraphViewController: UIViewController, ChartViewDelegate {
     var popUpDatePicker: UIDatePicker = UIDatePicker()
     
         override func viewDidLoad() {
+            
+         
             
             dbHelper = DatabaseHelper()
             
@@ -70,7 +76,6 @@ class GraphViewController: UIViewController, ChartViewDelegate {
                 NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
                 
                 self.setData()
-                
                 setupPieChart()
             }
            
@@ -154,6 +159,7 @@ class GraphViewController: UIViewController, ChartViewDelegate {
     }
     
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! HomeViewController
         
@@ -169,7 +175,7 @@ class GraphViewController: UIViewController, ChartViewDelegate {
     
     
     func setData() {
-        print((practicesArray[myIndex].startedday)! as Date)
+       // print((practicesArray[myIndex].startedday)! as Date)
         let startedDate = ((practicesArray[myIndex].startedday)! as Date).originalFormate()
         let days = Date().days(from: startedDate) + 1
        
@@ -192,9 +198,10 @@ class GraphViewController: UIViewController, ChartViewDelegate {
         print("name: \(practicename)")
         
      
-        let percentage: Int = Int((Float(practicedDays) / Float(days)) * 100)
+       percentage = Int((Float(practicedDays) / Float(days)) * 100)
        
     }
+    
     
     
     deinit {

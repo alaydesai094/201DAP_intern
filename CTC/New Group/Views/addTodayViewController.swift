@@ -48,6 +48,10 @@ class addTodayViewController: UIViewController{
     
     var picker: UIDatePicker = UIDatePicker()
     var popUpDatePicker: UIDatePicker = UIDatePicker()
+    
+    
+    // Notification
+    var center = UNUserNotificationCenter.current()
   
   
     override func viewDidLoad() {
@@ -195,9 +199,6 @@ class addTodayViewController: UIViewController{
     @objc func saveButtonTapped() {
         
         
-        
-        
-        
         let ispracticed = isOn
        // print(ispracticed)
         var noteData = noteTextView.text
@@ -236,11 +237,64 @@ class addTodayViewController: UIViewController{
         let percentageFloat : Float = Float(percentageValue)
         let percentageInPoint : Float = percentageFloat / 100
         
+        print(percentageInPoint)
+        
         progressView.trackColor = UIColor.lightGray
         progressView.progressColor = UIColor(displayP3Red: 64/255, green: 224/255, blue: 208/255, alpha: 1)
         progressView.setProgressWithAnimation(duration: 2.0, value: percentageInPoint)
         
         percentageLabel.startAnimation(fromValue: 0, to: percentageFloat, withDuration: 2, andAnimatonType: .Linear, andCounterType: .Int)
+        
+
+        print(percentageInPoint)
+            
+              
+              if percentageInPoint >= 0.40  {
+                  
+                                                       
+                         let notification = UNMutableNotificationContent()
+                         notification.title = "Connect To The core"
+                         notification.body = "Congratulations! You’re doing amazing!!"
+                         notification.sound = UNNotificationSound.default
+
+                         let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+                                                                   
+                         let request = UNNotificationRequest(identifier: "TestIdentifier", content: notification, trigger: notificationTrigger)
+                                                 center.add(request, withCompletionHandler: nil)
+                                                           
+                     }
+              
+        if percentageInPoint >= 0.60  {
+                         
+                                                              
+                                let notification = UNMutableNotificationContent()
+                                notification.title = "Connect To The core"
+                                notification.body = "You overachiever! Your percentage is 60%. Congrats!!"
+                                notification.sound = UNNotificationSound.default
+
+                                let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+                                                                          
+                                let request = UNNotificationRequest(identifier: "TestIdentifier", content: notification, trigger: notificationTrigger)
+                                                        center.add(request, withCompletionHandler: nil)
+                                                                  
+                            }
+        
+        if percentageInPoint >= 0.80  {
+        
+                                             
+               let notification = UNMutableNotificationContent()
+               notification.title = "Connect To The core"
+               notification.body = "Congrats!! you are almost there..!!"
+               notification.sound = UNNotificationSound.default
+
+               let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+                                                         
+               let request = UNNotificationRequest(identifier: "TestIdentifier", content: notification, trigger: notificationTrigger)
+                                       center.add(request, withCompletionHandler: nil)
+                                                 
+           }
+              
+        
         
     }
     
