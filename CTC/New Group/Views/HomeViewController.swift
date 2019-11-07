@@ -21,6 +21,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var oldPractice: String?
     var window: UIWindow!
     
+    
+    
     var userObject: User!
     let moreOptionIconList = ["book", "dairy", "money management","excercise","flour","communication","language","meditation","music","salad","sleep","relaxation","self reflection","walking","abstinence","yoga","tidy up","vegetable","writing","hobby","board game","sport","electronics","worship","entertainment","coffee-tea","Other"]
     var imageName: String = ""
@@ -48,10 +50,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     override func viewDidLoad() {
-        
-        
-        //notification
-        notif()
         
        
        // MARK: Testing
@@ -125,8 +123,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
        practices = self.getPractices()
         practicesData = self.getPracticesData(date: selectedDate)
-        
-//        NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.reloadHomeTableView), name:NSNotification.Name(rawValue: "NotificationID"), object: nil)
         
         
         // for popup view
@@ -509,49 +505,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
        
     }
-    
-     //-------------------
-    // Notification
-    // --------------------
-    
-    func notif(){
-       
-//                 // Notification content
-//                    let content = UNMutableNotificationContent()
-//                    content.title = "Title"
-//                    content.body = "Body"
-//                    content.sound = UNNotificationSound.default
-//
-//
-//                // data to set the trigger
-//                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-//
-//                // request the notification
-//                    let request = UNNotificationRequest(identifier: "TestIdentifier", content: content, trigger: trigger)
-//
-//                // call the notification
-//                    UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-        
-        
-        
-        let notification = UNMutableNotificationContent()
-        notification.title = "Hello!"
-        //notification.subtitle = "Something"
-        notification.body = "Hello_message_body"
-        notification.sound = UNNotificationSound.default
-
-        //add notification for Friday (after 5 days) at 10:00 a.m.
-        var dateComponents = DateComponents()
-        dateComponents.weekday = 1
-        dateComponents.hour = 10
-
-        let notificationTrigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-        let request = UNNotificationRequest(identifier: "TestIdentifier", content: notification, trigger: notificationTrigger)
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-        
-        
-    }
-    
     
     func isSwitchOn(practice: Practice, practicesData: [PracticeData]?) -> Bool? {
 

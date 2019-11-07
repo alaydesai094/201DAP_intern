@@ -14,7 +14,11 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
+    var count = 0
     
+    // Notification
+    var center = UNUserNotificationCenter.current()
+
     
     // Setting to run notification in foreground
        func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
@@ -76,8 +80,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
          //MARK: to select app launch over
     
         //Notification Settings
-     
-        //
         UNUserNotificationCenter.current().delegate = self
         
         // Permission for Notification
@@ -92,6 +94,142 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+        
+        UserDefaults.standard.set(Date(), forKey: "LastOpened")
+        
+        
+      func daysBetweenDates(startDate: Date, endDate: Date) -> Int {
+                   let calendar = Calendar.current
+                   let components = calendar.dateComponents([Calendar.Component.day], from: startDate, to: endDate)
+                   return components.day!
+               }
+
+       guard let lastOpened = UserDefaults.standard.object(forKey: "LastOpened") as? Date else {
+            return
+        }
+        
+        let diff = daysBetweenDates(startDate: lastOpened, endDate: Date() )
+        
+        if(diff == 1){
+            
+           count = count + 1
+            print(count)
+        }
+        else{}
+     
+        center.removeAllPendingNotificationRequests()
+        
+        //1. If they track practices 7 days in a row
+               if count == 1{
+                             
+                   let notification = UNMutableNotificationContent()
+                   notification.title = "Connect To The core"
+                   notification.body = "this is a test"
+                   notification.sound = UNNotificationSound.default
+
+                   let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+                                         
+                   let request = UNNotificationRequest(identifier: "TestIdentifier", content: notification, trigger: notificationTrigger)
+                       center.add(request, withCompletionHandler: nil)
+                                 
+               }
+        
+        
+    
+       //1. If they track practices 7 days in a row
+        if count == 7{
+                      
+            let notification = UNMutableNotificationContent()
+            notification.title = "Connect To The core"
+            notification.body = "You’re doing amazing!"
+            notification.sound = UNNotificationSound.default
+
+            let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+                                  
+            let request = UNNotificationRequest(identifier: "TestIdentifier", content: notification, trigger: notificationTrigger)
+                center.add(request, withCompletionHandler: nil)
+                          
+        }
+        
+       // If they track practices 10 days in a row
+        if count == 10 {
+            
+            let notification = UNMutableNotificationContent()
+            notification.title = "Connect To The core"
+            notification.body = "You’re doing great! Tracking for 10 days now!"
+            notification.sound = UNNotificationSound.default
+
+            let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+                                  
+            let request = UNNotificationRequest(identifier: "TestIdentifier", content: notification, trigger: notificationTrigger)
+                center.add(request, withCompletionHandler: nil)
+                            
+        }
+        
+        //If they track practices 14 days in a row
+        if count == 14 {
+                      
+            let notification = UNMutableNotificationContent()
+            notification.title = "Connect To The core"
+            notification.body = "Wow! 14 days in a row. Keep it up!"
+            notification.sound = UNNotificationSound.default
+
+            let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+                                  
+            let request = UNNotificationRequest(identifier: "TestIdentifier", content: notification, trigger: notificationTrigger)
+                center.add(request, withCompletionHandler: nil)
+                          
+        }
+        
+        //If they track practices 30 days in a row
+               if count == 30 {
+                             
+                   let notification = UNMutableNotificationContent()
+                   notification.title = "Connect To The core"
+                   notification.body = "30 days done, 171 to go! Great work! "
+                   notification.sound = UNNotificationSound.default
+
+                   let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+                                         
+                   let request = UNNotificationRequest(identifier: "TestIdentifier", content: notification, trigger: notificationTrigger)
+                       center.add(request, withCompletionHandler: nil)
+                                 
+               }
+        
+        //If they track practices 171 days in a row
+                     if count == 171 {
+                                   
+                         let notification = UNMutableNotificationContent()
+                         notification.title = "Connect To The core"
+                         notification.body = "You’re 30 days away from 201! You can do this!"
+                         notification.sound = UNNotificationSound.default
+
+                         let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+                                               
+                         let request = UNNotificationRequest(identifier: "TestIdentifier", content: notification, trigger: notificationTrigger)
+                             center.add(request, withCompletionHandler: nil)
+                                       
+                     }
+        
+        
+        //If they track practices 201 days in a row
+        if count == 201 {
+                                          
+            let notification = UNMutableNotificationContent()
+            notification.title = "Connect To The core"
+            notification.body = "You did your 201 days of practice today! Congratulations!"
+            notification.sound = UNNotificationSound.default
+
+            let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+                                                      
+            let request = UNNotificationRequest(identifier: "TestIdentifier", content: notification, trigger: notificationTrigger)
+                                    center.add(request, withCompletionHandler: nil)
+                                              
+        }
+        
+        
+        
+        
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
@@ -105,6 +243,74 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        guard let lastOpened = UserDefaults.standard.object(forKey: "LastOpened") as? Date else {
+               return
+           }
+
+       func daysBetweenDates(startDate: Date, endDate: Date) -> Int {
+            let calendar = Calendar.current
+            let components = calendar.dateComponents([Calendar.Component.day], from: startDate, to: endDate)
+            return components.day!
+        }
+        
+        let totaldays = daysBetweenDates(startDate: lastOpened, endDate: Date() )
+        
+        center.removeAllPendingNotificationRequests()
+        
+        
+        // 1. If they haven’t opened the app in 3 days
+        if totaldays >= 3{
+            
+            let notification = UNMutableNotificationContent()
+            notification.title = "Connect To The core"
+            notification.body = "We haven’t seen you in a while ☹"
+            notification.sound = UNNotificationSound.default
+
+        let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+                    
+            let request = UNNotificationRequest(identifier: "TestIdentifier", content: notification, trigger: notificationTrigger)
+                     center.add(request, withCompletionHandler: nil)
+            
+            
+        }
+       // 2. If they haven’t opened the app in 7 days
+        if totaldays >= 7{
+                   
+                   let notification = UNMutableNotificationContent()
+                   notification.title = "Connect To The core"
+                   notification.body = "You haven’t tracked your practices. Let’s get back at it."
+                   notification.sound = UNNotificationSound.default
+
+               let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+                           
+                   let request = UNNotificationRequest(identifier: "TestIdentifier", content: notification, trigger: notificationTrigger)
+                            center.add(request, withCompletionHandler: nil)
+                    
+            }
+        
+        // 3. If they haven’t opened the app in 14 days
+        
+        if totaldays >= 14{
+                          
+            let notification = UNMutableNotificationContent()
+            notification.title = "Connect To The core"
+            notification.body = "Don’t give up, every step counts!"
+            notification.sound = UNNotificationSound.default
+
+            let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+                                  
+            let request = UNNotificationRequest(identifier: "TestIdentifier", content: notification, trigger: notificationTrigger)
+                                   center.add(request, withCompletionHandler: nil)
+                          
+                          
+        }
+        
+        
+        
+        
+        
+        
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -113,17 +319,113 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         self.saveContext()
     }
     
-    //-------------------------------
-    // MARK: Notification
-    //--------------------------------
     
-    func notifica(){
+    func notify(){
         
+         // notification on start of the year
+        center.removeAllPendingNotificationRequests()
+        
+            let notification = UNMutableNotificationContent()
+            notification.title = "Connect To The core"
+            notification.body = "It’s January 1st, did you want to add new practices to your list?"
+            notification.sound = UNNotificationSound.default
+            
+              //add notification on jan 01
+                var dateComponents = DateComponents()
+                dateComponents.month = 1
+                dateComponents.day = 1
+                dateComponents.hour = 15
+                dateComponents.minute = 30
+      
+        
+                let notificationTrigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+
+        //let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+                    
+            let request = UNNotificationRequest(identifier: "TestIdentifier", content: notification, trigger: notificationTrigger)
+                     center.add(request, withCompletionHandler: nil)
+        
+        
+        //------------------------------------------------------------------------
+        
+        // notification at end of the year
+        
+        let notification2 = UNMutableNotificationContent()
+              notification2.title = "Connect To The core"
+              notification2.body = "It’s January 1st, did you want to add new practices to your list?"
+              notification.sound = UNNotificationSound.default
+              
+                //add notification on Dec 1
+                  var dateComponents2 = DateComponents()
+                  dateComponents2.month = 12
+                  dateComponents2.day = 31
+                  dateComponents2.hour = 15
+                  dateComponents2.minute = 30
+        
+          
+                  let notificationTrigger2 = UNCalendarNotificationTrigger(dateMatching: dateComponents2, repeats: true)
+
+          //let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+                      
+              let request2 = UNNotificationRequest(identifier: "TestIdentifier", content: notification2, trigger: notificationTrigger2)
+            
+                center.add(request2, withCompletionHandler: nil)
+        
+        
+        //-------------------------------------------------------------
+        
+         // notification every month
+        
+        let notification3 = UNMutableNotificationContent()
+                     notification3.title = "Connect To The core"
+                     notification3.body = "Check out the 201 Day Achievement Principle book and journal (with link to Amazon )"
+                     notification3.sound = UNNotificationSound.default
+                     
+                       //add notification every month
+                         var dateComponents3 = DateComponents()
+                         dateComponents3.day = 1
+                         dateComponents3.hour = 15
+                         dateComponents3.minute = 30
+               
+                 
+                         let notificationTrigger3 = UNCalendarNotificationTrigger(dateMatching: dateComponents3, repeats: true)
+
+                 //let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+                             
+                     let request3 = UNNotificationRequest(identifier: "TestIdentifier", content: notification3, trigger: notificationTrigger3)
+                   
+                       center.add(request3, withCompletionHandler: nil)
+        
+        //-------------------------------------------------------------
+        
+         // notification every month
+        
+        let notification4 = UNMutableNotificationContent()
+                     notification4.title = "Connect To The core"
+                     notification4.body = "Join our Facebook community for support (with FB link)"
+                     notification4.sound = UNNotificationSound.default
+                     
+                       //add notification every month
+                         var dateComponents4 = DateComponents()
+                         dateComponents4.day = 1
+                         dateComponents4.hour = 15
+                         dateComponents4.minute = 30
+               
+                 
+                         let notificationTrigger4 = UNCalendarNotificationTrigger(dateMatching: dateComponents4, repeats: true)
+
+                 //let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+                             
+                     let request4 = UNNotificationRequest(identifier: "TestIdentifier", content: notification4, trigger: notificationTrigger4)
+                   
+                       center.add(request4, withCompletionHandler: nil)
+          
         
     }
     
     
     
+  
 
     // MARK: - Core Data stack
 
