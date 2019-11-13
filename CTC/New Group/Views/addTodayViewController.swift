@@ -253,7 +253,7 @@ class addTodayViewController: UIViewController{
                   
                                                        
                          let notification = UNMutableNotificationContent()
-                         notification.title = "Connect To The core"
+                         notification.title = "201 Day Achievement Principle"
                          notification.body = "Congratulations! You’re doing amazing!!"
                          notification.sound = UNNotificationSound.default
 
@@ -268,7 +268,7 @@ class addTodayViewController: UIViewController{
                          
                                                               
                                 let notification = UNMutableNotificationContent()
-                                notification.title = "Connect To The core"
+                                notification.title = "201 Day Achievement Principle"
                                 notification.body = "You overachiever! Your percentage is 60%. Congrats!!"
                                 notification.sound = UNNotificationSound.default
 
@@ -283,7 +283,7 @@ class addTodayViewController: UIViewController{
         
                                              
                let notification = UNMutableNotificationContent()
-               notification.title = "Connect To The core"
+               notification.title = "201 Day Achievement Principle"
                notification.body = "Congrats!! you are almost there..!!"
                notification.sound = UNNotificationSound.default
 

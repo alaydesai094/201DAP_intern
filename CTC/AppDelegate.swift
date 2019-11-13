@@ -123,7 +123,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                if count == 1{
                              
                    let notification = UNMutableNotificationContent()
-                   notification.title = "Connect To The core"
+                   notification.title = "201 Day Achievement Principle"
                    notification.body = "this is a test"
                    notification.sound = UNNotificationSound.default
 
@@ -140,7 +140,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         if count == 7{
                       
             let notification = UNMutableNotificationContent()
-            notification.title = "Connect To The core"
+            notification.title = "201 Day Achievement Principle"
             notification.body = "You’re doing amazing!"
             notification.sound = UNNotificationSound.default
 
@@ -155,7 +155,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         if count == 10 {
             
             let notification = UNMutableNotificationContent()
-            notification.title = "Connect To The core"
+            notification.title = "201 Day Achievement Principle"
             notification.body = "You’re doing great! Tracking for 10 days now!"
             notification.sound = UNNotificationSound.default
 
@@ -170,7 +170,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         if count == 14 {
                       
             let notification = UNMutableNotificationContent()
-            notification.title = "Connect To The core"
+            notification.title = "201 Day Achievement Principle"
             notification.body = "Wow! 14 days in a row. Keep it up!"
             notification.sound = UNNotificationSound.default
 
@@ -185,7 +185,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                if count == 30 {
                              
                    let notification = UNMutableNotificationContent()
-                   notification.title = "Connect To The core"
+                   notification.title = "201 Day Achievement Principle"
                    notification.body = "30 days done, 171 to go! Great work! "
                    notification.sound = UNNotificationSound.default
 
@@ -200,7 +200,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                      if count == 171 {
                                    
                          let notification = UNMutableNotificationContent()
-                         notification.title = "Connect To The core"
+                         notification.title = "201 Day Achievement Principle"
                          notification.body = "You’re 30 days away from 201! You can do this!"
                          notification.sound = UNNotificationSound.default
 
@@ -216,7 +216,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         if count == 201 {
                                           
             let notification = UNMutableNotificationContent()
-            notification.title = "Connect To The core"
+            notification.title = "201 Day Achievement Principle"
             notification.body = "You did your 201 days of practice today! Congratulations!"
             notification.sound = UNNotificationSound.default
 
@@ -263,7 +263,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         if totaldays >= 3{
             
             let notification = UNMutableNotificationContent()
-            notification.title = "Connect To The core"
+            notification.title = "201 Day Achievement Principle"
             notification.body = "We haven’t seen you in a while ☹"
             notification.sound = UNNotificationSound.default
 
@@ -278,7 +278,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         if totaldays >= 7{
                    
                    let notification = UNMutableNotificationContent()
-                   notification.title = "Connect To The core"
+                   notification.title = "201 Day Achievement Principle"
                    notification.body = "You haven’t tracked your practices. Let’s get back at it."
                    notification.sound = UNNotificationSound.default
 
@@ -294,7 +294,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         if totaldays >= 14{
                           
             let notification = UNMutableNotificationContent()
-            notification.title = "Connect To The core"
+            notification.title = "201 Day Achievement Principle"
             notification.body = "Don’t give up, every step counts!"
             notification.sound = UNNotificationSound.default
 
@@ -326,7 +326,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         center.removeAllPendingNotificationRequests()
         
             let notification = UNMutableNotificationContent()
-            notification.title = "Connect To The core"
+            notification.title = "201 Day Achievement Principle"
             notification.body = "It’s January 1st, did you want to add new practices to your list?"
             notification.sound = UNNotificationSound.default
             
@@ -351,7 +351,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // notification at end of the year
         
         let notification2 = UNMutableNotificationContent()
-              notification2.title = "Connect To The core"
+              notification2.title = "201 Day Achievement Principle"
               notification2.body = "It’s January 1st, did you want to add new practices to your list?"
               notification.sound = UNNotificationSound.default
               
@@ -377,7 +377,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
          // notification every month
         
         let notification3 = UNMutableNotificationContent()
-                     notification3.title = "Connect To The core"
+                     notification3.title = "201 Day Achievement Principle"
                      notification3.body = "Check out the 201 Day Achievement Principle book and journal (with link to Amazon )"
                      notification3.sound = UNNotificationSound.default
                      
@@ -401,7 +401,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
          // notification every month
         
         let notification4 = UNMutableNotificationContent()
-                     notification4.title = "Connect To The core"
+                     notification4.title = "201 Day Achievement Principle"
                      notification4.body = "Join our Facebook community for support (with FB link)"
                      notification4.sound = UNNotificationSound.default
                      
